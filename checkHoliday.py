@@ -4,7 +4,7 @@ import datetime
 
 
 def holidayJaList():
-    response = requests.get("https://www.googleapis.com/calendar/v3/calendars/japanese__ja%40holiday.calendar.google.com/events?key=WhyIForgetToDeleteThisKey??")
+    response = requests.get("https://www.googleapis.com/calendar/v3/calendars/japanese__ja%40holiday.calendar.google.com/events?key=AIzaSyBH3GdFIYMMejSq2SSHIh1oQDnLahQ2MDo")
     data = response._content
     simple_data = json.loads(data)
     item= simple_data['items']
