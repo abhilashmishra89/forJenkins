@@ -19,6 +19,3 @@ def isHoliday(aaj):
         return True
     else:
         return False
-
-#checkCommit
-#checkCommit-2
