@@ -2,7 +2,7 @@
 import datetime
 import os
 import smtplib
-from checkHoliday import *
+# from checkHoliday import *
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -33,15 +33,15 @@ html="""\
 """
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
-s = smtplib.SMTP('localhost')
-d= datetime.datetime.now()
-holiday=isHoliday(datetime.datetime.today().strftime('%Y-%m-%d'))
-#print(holiday)
-
-if d.hour in range(10,15) and holiday is False:
-    os.system("rm -rf /tmp/trigger")
-    os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")    
-    if os.stat("/tmp/trigger").st_size != 0:
-        s.sendmail(me, you, msg.as_string())
-        s.quit()
+# s = smtplib.SMTP('localhost')
+# d= datetime.datetime.today().strftime('%Y-%m-%d')
+isHoliday = os.system("ssh 192.168.10.91 python /home/ncc/forJenkins/checkHoliday.py")
+# print(d)
+if isHoliday == "False":
+    if d.hour in range(10,15) and holiday is False:
+        os.system("rm -rf /tmp/trigger")
+        os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")    
+        if os.stat("/tmp/trigger").st_size != 0:
+            s.sendmail(me, you, msg.as_string())
+            s.quit()
 
