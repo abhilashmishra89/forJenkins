@@ -20,6 +20,5 @@ def isHoliday(aaj):
     else:
         return False
 
-d= datetime.datetime.today().strftime('%Y-%m-%d')
-print(isHoliday(d))
+
 #commit Changes -> making private again, always forgot to remove the APIKey before push.
