@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 
 
 me = "ncc@extensioncheck.com"
-you = "abhilashmishra@ameyo.com"
+you = "abhilash@ipsism.co.jp"
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "Link"
@@ -34,16 +34,16 @@ html="""\
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
 s = smtplib.SMTP('localhost')
-d= datetime.datetime.today().strftime('%Y-%m-%d')
+d= datetime.datetime.now()
 isholiday = isHoliday(d)
-# print(d)
-if isholiday = False:
+if isholiday is False:
     if d.hour in range(10,15):
         os.system("rm -rf /tmp/trigger")
-        os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")    
+        os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")
         if os.stat("/tmp/trigger").st_size != 0:
             s.sendmail(me, you, msg.as_string())
             s.quit()
+
 
 
 #test lines
