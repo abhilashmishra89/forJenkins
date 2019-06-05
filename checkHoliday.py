@@ -8,11 +8,11 @@ def holidayJaList():
     data = response._content
     simple_data = json.loads(data)
     item= simple_data['items']
-    chugal=[]
+    dates=[]
     #print(item)
     for element in item:
-        chugal.append(element['start']['date'])    
-    return chugal
+        dates.append(element['start']['date'])    
+    return dates
 
 def isHoliday(aaj):
     if aaj in holidayJaList():
@@ -20,5 +20,7 @@ def isHoliday(aaj):
     else:
         return False
 
+#aaj = datetime.datetime.now()
+#print(isHoliday('2019-03-21'))
 
-#commit Changes -> making private again, always forgot to remove the APIKey before push.
+# IMPORTANT:  remove the APIKey before making public !!! 
