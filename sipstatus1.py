@@ -8,10 +8,11 @@ from email.mime.text import MIMEText
 
 
 me = "ncc@extensioncheck.com"
-you = "abhilash@ipsism.co.jp"
+you = "zb_ameyotech@ipsism.co.jp"
+#you = "abhilash@ipsism.co.jp"
 
 msg = MIMEMultipart('alternative')
-msg['Subject'] = "Link"
+msg['Subject'] = "NCC Extension Unregistered"
 msg['From'] = me
 msg['To'] = you
 
