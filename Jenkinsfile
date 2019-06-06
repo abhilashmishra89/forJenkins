@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'scp -r * root@ncc:/home/git-ncc/'
+                sh 'scp -r -o StrictHostKeyChecking=no ../git-ncc/* root@192.168.188.130:/home/git-ncc/'
                 
             }
         }
