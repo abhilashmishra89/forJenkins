@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sshpass -p "jenkins" scp -r -o StrictHostKeyChecking=no * jenkins@192.168.188.130:/home/ncc/'
+                sh 'sshpass -p "ips@ameyo020" scp -r -o StrictHostKeyChecking=no * root@192.168.188.130:/home/ncc/'
                 
             }
         }
