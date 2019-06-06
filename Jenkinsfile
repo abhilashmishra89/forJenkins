@@ -1,13 +1,13 @@
 pipeline {
     agent {
         node {
-            label 'C020'
+            label 'master'
         }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Complete"'
+                sh 'scp .* ncc:/home/git-ncc/'
                 
             }
         }
