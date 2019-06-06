@@ -5,4 +5,4 @@ Functionality:
   b. script sipstatus1.py checks the status of sip extensions with the command, sip show peers. If the status is "(Unspecified)", then shoot an email to the preconfigured emails.
   
   
-  The google API has my own key, please use your.
+  The google API has my own key, please use yours.
