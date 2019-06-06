@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'scp .* ncc:/home/git-ncc/'
+                sh 'scp -r * ncc:/home/git-ncc/'
                 
             }
         }
