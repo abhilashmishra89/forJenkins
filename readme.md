@@ -11,5 +11,3 @@ Functionality:
   
   
   
-to test CI/CD , each 15 minutes deployment.
-Just checking something, commit info at jenkins
