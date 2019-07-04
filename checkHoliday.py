@@ -24,5 +24,4 @@ def isHoliday(aaj):
 #print(isHoliday('2019-03-21'))
 
 # IMPORTANT:  remove the APIKey before making public !!! 
-#testing cicd
 
