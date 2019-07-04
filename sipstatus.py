@@ -44,6 +44,3 @@ if isholiday is False:
         if os.stat("/tmp/trigger").st_size != 0:
             s.sendmail(me, you, msg.as_string())
             s.quit()
-
-
-#testing for CICD -1 
