@@ -5,6 +5,7 @@ import smtplib
 from checkHoliday import *
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from datetime import date
 
 
 me = "ncc@extensioncheck.com"
@@ -35,7 +36,7 @@ html="""\
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
 s = smtplib.SMTP('localhost')
-d= datetime.datetime.now()
+d= date.today()
 isholiday = isHoliday(d)
 if isholiday is False:
     if d.hour in range(10,15):
