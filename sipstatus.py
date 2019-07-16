@@ -36,8 +36,9 @@ html="""\
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
 s = smtplib.SMTP('localhost')
-d= date.today()
-isholiday = isHoliday(d)
+d= datetime.datetime.now()
+flag = date.today()
+isholiday = isHoliday(flag)
 if isholiday is False:
     if d.hour in range(10,15):
         os.system("rm -rf /tmp/trigger")
