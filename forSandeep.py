@@ -26,7 +26,7 @@ def isHoliday(aaj):
         return False
 
 me = "asterisk@extensioncheck.com"
-you = "sandeepmajumdar@ameyo.com"
+you = "abhilash@ipsism.co.jp"
 #you = "abhilash@ipsism.co.jp,lalala@gmail.com" #comma seperated values are ok
 
 msg = MIMEMultipart('alternative')
@@ -59,7 +59,7 @@ isholiday = False
 if isholiday is False:
     if d.hour in range(10,15): #configure the time for which the script should work. Right now it is 10 AM to 03:00 PM.
         os.system("rm -rf /tmp/trigger")
-        os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")
+        os.system("/dacx/ameyo/asterisks/13/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/13/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")
         if os.stat("/tmp/trigger").st_size != 0:
             s.sendmail(me, you, msg.as_string())
             s.quit()
