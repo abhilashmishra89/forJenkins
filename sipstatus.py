@@ -9,13 +9,13 @@ from datetime import date
 
 
 me = "ncc@extensioncheck.com"
-you = "zb_ameyotech@ipsism.co.jp,m_okudaira@ipsism.co.jp"
+you = ['zb_ameyotech@ipsism.co.jp,m_okudaira@ipsism.co.jp']
 #you = "abhilash@ipsism.co.jp"
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "NCC Extension Unregistered"
 msg['From'] = me
-msg['To'] = you
+msg['To'] = ", ".join(you)
 
 html="""\
 <!DOCTYPE html>
