@@ -35,7 +35,7 @@ html="""\
 """
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
-s = smtplib.SMTP('localhost')
+s = smtplib.SMTP('smtp.gmail.com',587)
 d= datetime.datetime.now()
 flag = date.today()
 isholiday = isHoliday(flag)
@@ -44,5 +44,9 @@ if isholiday is False:
         os.system("rm -rf /tmp/trigger")
         os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")
         if os.stat("/tmp/trigger").st_size != 0:
+            s.ehlo()
+            s.starttls()
+            s.ehlo()
+            s.login('omniqueue@ipsism.co.jp', 'aV5H%>hD')
             s.sendmail(me, you, msg.as_string())
             s.quit()
