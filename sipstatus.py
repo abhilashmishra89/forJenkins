@@ -2,7 +2,7 @@
 import datetime
 import os
 import smtplib
-from checkHoliday import *
+from checkHoliday import isHoliday,holidayJaList
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import date
