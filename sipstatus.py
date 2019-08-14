@@ -37,7 +37,7 @@ part2 = MIMEText(html, 'html')
 msg.attach(part2)
 s = smtplib.SMTP('smtp.gmail.com',587)
 d= datetime.datetime.now()
-flag = date.today()
+flag = str(date.today())
 isholiday = isHoliday(flag)
 if isholiday is False:
     if d.hour in range(10,15):
