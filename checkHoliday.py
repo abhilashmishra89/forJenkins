@@ -4,7 +4,7 @@ import datetime
 
 
 def holidayJaList():
-    response = requests.get("https://www.googleapis.com/calendar/v3/calendars/japanese__ja%40holiday.calendar.google.com/events?key=AIzaSyBH3GdFIYMMejSq2SSHIh1oQDnLahQ2MDo")
+    response = requests.get("https://www.googleapis.com/calendar/v3/calendars/japanese__ja@holiday.calendar.google.com/events?key=AIzaSyBH3GdFIYMMejSq2SSHIh1oQDnLahQ2MDo")
     data = response._content
     simple_data = json.loads(data)
     item= simple_data['items']
@@ -21,7 +21,8 @@ def isHoliday(aaj):
         return False
 
 #aaj = datetime.datetime.now()
-#print(isHoliday('2019-03-21'))
+# print(isHoliday('2019-08-12'))
+# print(holidayJaList())
 
 # IMPORTANT:  remove the APIKey before making public !!! 
 
