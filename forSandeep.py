@@ -24,6 +24,8 @@ def isHoliday(aaj):
         return True
     else:
         return False
+# aaj = '2019-08-12'
+# print(isHoliday(aaj))
 
 me = "asterisk@extensioncheck.com"
 you = "abhilash@ipsism.co.jp"
