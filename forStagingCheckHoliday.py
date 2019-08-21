@@ -28,13 +28,13 @@ def isHoliday(aaj):
 # print(isHoliday(aaj))
 
 me = "asterisk@extensioncheck.com"
-you = "abhilash@ipsism.co.jp"
+you = ['abhilash@ipsism.co.jp','abhilashmishra89@gmail.com']
 #you = "abhilash@ipsism.co.jp,lalala@gmail.com" #comma seperated values are ok
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "Extension Unregistered"
 msg['From'] = me
-msg['To'] = you
+msg['To'] = ", ".join(you)
 
 html="""\	
 <!DOCTYPE html>
