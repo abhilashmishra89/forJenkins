@@ -11,7 +11,21 @@ smtp_password = 'smtp-password'
 fromEmail = "fromemail@example.com"
 toEmail = ['toemail-1@example.com.jp,toemail-2@example.com']
 key = 'read here how to get it : https://developers.google.com/maps/documentation/javascript/get-api-key'
+html = """\
+<!DOCTYPE html>
+<html>
+<body>
 
+<h1>This is the header of sample Email Alert</h1>
+<h3>
+This is the static message configured to be sent as alert in h3 tag.
+
+</h3>
+<a href="http://192.168.188.130:8786/monitoring_tool/index.php">NCC Extension status</a>
+
+</body>
+</html>
+"""
 
 ```
 Functionality:
