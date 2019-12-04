@@ -6,7 +6,7 @@ from checkHoliday import isHoliday, holidayJaList
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import date
-from conf_data import fromEmail, toEmail, smtp_id, smtp_password
+from conf_data import fromEmail, toEmail, smtp_id, smtp_password, html
 
 
 msg = MIMEMultipart('alternative')
@@ -14,22 +14,7 @@ msg['Subject'] = "NCC Extension Unregistered"
 msg['From'] = fromEmail
 msg['To'] = ", ".join(toEmail)
 
-html = """\
-<!DOCTYPE html>
-<html>
-<body>
 
-<h1>国立がんセンターの内線番号がUnregisteredになりました。
-至急以下へご連絡をお願い致します。</h1>
-<h3>
-国立がんセンター連絡先：03-3547-5201 内線1616
-担当：澤井様、桜井様、小野様
-</h3>
-<a href="http://192.168.188.130:8786/monitoring_tool/index.php">NCC Extension status</a>
-
-</body>
-</html>
-"""
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
 s = smtplib.SMTP('smtp.gmail.com', 587)
