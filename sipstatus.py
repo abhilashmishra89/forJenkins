@@ -11,8 +11,8 @@ from conf_data import fromEmail, toEmail, smtp_id, smtp_password
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "NCC Extension Unregistered"
-msg['From'] = me
-msg['To'] = ", ".join(you)
+msg['From'] = fromEmail
+msg['To'] = ", ".join(toEmail)
 
 html = """\
 <!DOCTYPE html>
