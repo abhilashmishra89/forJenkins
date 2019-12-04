@@ -6,11 +6,8 @@ from checkHoliday import isHoliday, holidayJaList
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import date
+from conf_data import fromEmail, toEmail, smtp_id, smtp_password
 
-
-me = "ncc@extensioncheck.com"
-you = ['zb_ameyotech@ipsism.co.jp,m_okudaira@ipsism.co.jp']
-#you = "abhilash@ipsism.co.jp"
 
 msg = MIMEMultipart('alternative')
 msg['Subject'] = "NCC Extension Unregistered"
@@ -47,6 +44,6 @@ if isholiday is False:
             s.ehlo()
             s.starttls()
             s.ehlo()
-            s.login('omniqueue@ipsism.co.jp', 'aV5H%>hD')
-            s.sendmail(me, you, msg.as_string())
+            s.login('{0}', '{1}'.format(smtp_id, smtp_password))
+            s.sendmail(fromEmail, toEmail, msg.as_string())
             s.quit()
