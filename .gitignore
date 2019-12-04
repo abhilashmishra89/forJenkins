@@ -1,4 +1,3 @@
 __pycache__/
-__pycache__/*
-*.pyc
 __pycache__/checkHoliday.cpython-37.pyc
+conf_data.py
