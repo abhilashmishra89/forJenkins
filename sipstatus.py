@@ -2,7 +2,7 @@
 import datetime
 import os
 import smtplib
-from checkHoliday import isHoliday,holidayJaList
+from checkHoliday import isHoliday, holidayJaList
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import date
@@ -17,7 +17,7 @@ msg['Subject'] = "NCC Extension Unregistered"
 msg['From'] = me
 msg['To'] = ", ".join(you)
 
-html="""\
+html = """\
 <!DOCTYPE html>
 <html>
 <body>
@@ -35,12 +35,12 @@ html="""\
 """
 part2 = MIMEText(html, 'html')
 msg.attach(part2)
-s = smtplib.SMTP('smtp.gmail.com',587)
-d= datetime.datetime.now()
+s = smtplib.SMTP('smtp.gmail.com', 587)
+d = datetime.datetime.now()
 flag = str(date.today())
 isholiday = isHoliday(flag)
 if isholiday is False:
-    if d.hour in range(10,15):
+    if d.hour in range(10, 15):
         os.system("rm -rf /tmp/trigger")
         os.system("/dacx/ameyo/asterisks/1.6/sbin/asterisk -C /dacx/var/ameyo/dacxdata/asterisks/1.6/etc/asterisk/asterisk.conf -rx 'sip show peers' | grep Unspecified >>/tmp/trigger")
         if os.stat("/tmp/trigger").st_size != 0:
