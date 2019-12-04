@@ -44,6 +44,6 @@ if isholiday is False:
             s.ehlo()
             s.starttls()
             s.ehlo()
-            s.login('{0}', '{1}'.format(smtp_id, smtp_password))
+            s.login('{0}'.format(smtp_id), '{0}'.format(smtp_password))
             s.sendmail(fromEmail, toEmail, msg.as_string())
             s.quit()
