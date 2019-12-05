@@ -35,3 +35,4 @@ Functionality:
     2. sipstatus script checks the status of asterisk extensions, If unregistered and it is not holiday in japan, it sends email alert to the preconfigured email id's (toEmail)
   
   
+** Feel Free to suggest and contribute**
