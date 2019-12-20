@@ -6,11 +6,12 @@
 * Add a file conf_data.py in the working directory in the below format, as it has critical data, it should always be included in the gitignore
 
 ```
-smtp_id = 'smtp.gmail.com'
-smtp_password = 'smtp-password'
 fromEmail = "fromemail@example.com"
+fromEmailPassword = 'your password'
 toEmail = ['toemail-1@example.com.jp,toemail-2@example.com']
 key = 'read here how to get it : https://developers.google.com/maps/documentation/javascript/get-api-key'
+smtp_id = fromEmail
+smtp_password = fromEmailPassword
 html = """\
 <!DOCTYPE html>
 <html>
